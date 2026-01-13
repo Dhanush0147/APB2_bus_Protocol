@@ -1,6 +1,5 @@
 
 All state transitions occur on the **negative edge of the clock**, while address and data are latched on the **positive edge**, ensuring clean synchronization. 
-Load and Store instructions automatically trigger APB transactions using an internal `transfer` signal, and the CPU is stalled until the peripheral asserts `PREADY`.
 
 ---
 
