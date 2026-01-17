@@ -1,18 +1,18 @@
-module APB_master(input Transfer,              //temp signals for master input
-                  input Wr_Rd,                 //temp signals for master input
-                  input [4:0] Address,         //temp signals for master input
-                  input [31:0] write_data,     //temp signals for master input
-                  output reg [31:0] read_data, //temp signals for master input
-                  input PCLK,                  //clock
-                  input PRESETn,               //active low async reset
-                  input PREADY,                //input by slave
-                  input [31:0] PRDATA,         //32 bit bus to read data
-                  input PSLVERR,               //Error signal by slave
-                  output reg [4:0] PADDR,      //32 bit address
-                  output reg PSELx,            //select slave
-                  output reg PENABLE,          //indicate 2nd or subsequent cycle
-                  output reg PWRITE,           //high->write, low->read
-                  output reg [31:0] PWDATA);   //32 bit bus to write data
+module APB_master(input Transfer,              
+                  input Wr_Rd,                 
+                  input [4:0] Address,         
+                  input [31:0] write_data,     
+                  output reg [31:0] read_data, 
+                  input PCLK,                 
+                  input PRESETn,               
+                  input PREADY,               
+                  input [31:0] PRDATA,         
+                  input PSLVERR,               
+                  output reg [4:0] PADDR,      
+                  output reg PSELx,           
+                  output reg PENABLE,          
+                  output reg PWRITE,           
+                  output reg [31:0] PWDATA);   
     
     parameter IDLE = 2'b00, SETUP = 2'b01, ACCESS = 2'b10;
     reg [1:0] ps,ns;
