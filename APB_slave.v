@@ -1,13 +1,13 @@
-module APB_slave(input PCLK,               //clock
-                 input PRESETn,            //active low reset
-                 input [4:0] PADDR,        //32 bit address
-                 input PSELx,              //select slave
-                 input PENABLE,            //indicate 2nd or subsequent cycle
-                 input PWRITE,             //high->write, low->read
-                 input [31:0]PWDATA,       //32 bit Data Bus
-                 output reg PREADY,        //ready status by slave
-                 output reg [31:0] PRDATA, //32 bit Data Bus
-                 output reg PSLVERR = 0);  //Error occurred
+module APB_slave(input PCLK,               
+                 input PRESETn,           
+                 input [4:0] PADDR,     
+                 input PSELx,             
+                 input PENABLE,            
+                 input PWRITE,             
+                 input [31:0]PWDATA,      
+                 output reg PREADY,        
+                 output reg [31:0] PRDATA, 
+                 output reg PSLVERR = 0); 
     
     reg [31:0] mem [0:31]; //32 bit wide and 32 locations
     
